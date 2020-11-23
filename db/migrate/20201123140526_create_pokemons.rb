@@ -5,7 +5,7 @@ class CreatePokemons < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :type
       t.integer :price_per_day
-      t.User :references
+      t.references :user
 
       t.timestamps
     end
