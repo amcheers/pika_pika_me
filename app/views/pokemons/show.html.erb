@@ -2,10 +2,13 @@
 
 <div class="pokemon-results">
   <div class="pokemon-container">
-    <%= pokemon.description %>
-    <%= pokemon.type %>
-    <%= pokemon.price_per_day %>
-    <%= pokemon.user.address %>
+    <%= @pokemon.description %>
+    <%= @pokemon.pokemon_class %>
+    <%= @pokemon.price_per_day %>
+    <%= @pokemon.user.address %>
+  </div>
+  <div class="pokemon-photo">
+    <%= cl_image_path @pokemon.photo.key %>
   </div>
 
   <div class="map-results">
@@ -13,7 +16,7 @@
   </div>
 </div>
 
-<%= simple_form_for @pokemon do |f| %>
+<%= simple_form_for [@booking, @pokemon] do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.submit %>
