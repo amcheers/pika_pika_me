@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<%= simple_form_for @pokemon do |f| %>
+<%= simple_form_for [@booking, @pokemon] do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.submit %>
