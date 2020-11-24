@@ -2,10 +2,13 @@
 
 <div class="pokemon-results">
   <div class="pokemon-container">
-    <%= pokemon.description %>
-    <%= pokemon.pokemon_class %>
-    <%= pokemon.price_per_day %>
-    <%= pokemon.user.address %>
+    <%= @pokemon.description %>
+    <%= @pokemon.pokemon_class %>
+    <%= @pokemon.price_per_day %>
+    <%= @pokemon.user.address %>
+  </div>
+  <div class="pokemon-photo">
+    <%= cl_image_path @pokemon.photo.key %>
   </div>
 
   <div class="map-results">
