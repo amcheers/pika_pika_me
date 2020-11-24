@@ -9,6 +9,8 @@ class PokemonsController < ApplicationController
     set_pokemon
   end
 
+  
+
   private
 
   def set_pokemon
