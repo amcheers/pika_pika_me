@@ -1,19 +1,15 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-
-  def new
-    @pokemon = Pokemon.find(params[:pokemon_id])
-    @booking = Booking.new
-  end
-  
+ 
   def create
     @booking = Booking.new(booking_params)
     @pokemon = Pokemon.find(params[:pokemon_id])
     @booking.pokemon = @pokemon
+    @booking.user = current_user
     if @booking.save
       redirect_to pokemons_path(@pokemon)
     else
-      render :new
+      render "pokemons/show"
     end
   end
 
