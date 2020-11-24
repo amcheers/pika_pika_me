@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_095053) do
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "class"
+    t.string "pokemon_class"
     t.integer "price_per_day"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
