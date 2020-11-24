@@ -1,0 +1,17 @@
+
+<div class="search-results">
+  <%= @pokemons.each do |pokemon| %>
+  <div class="cards">
+    <div class="card-item">
+      <div>Photo</div>
+      <div class="description">
+        <%= pokemon.name %>
+        <%= pokemon.type %>
+      </div>
+      <div class="price"><%= pokeon.price_per_day %></div>
+    </div>
+  </div>
+  <div id="map">
+  </div>
+  <% end %>
+</div>
