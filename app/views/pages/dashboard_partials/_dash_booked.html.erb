@@ -1,0 +1,13 @@
+<div class="col-12 col-lg-6">
+  <div class="my-bookings">
+    <ul class="list-group">
+      <% bookings.each do |booking|%>
+      <li class="list-group-item">
+        <p><%= booking.pokemon.name%></p>
+        <p>When? <%= booking.start_date %> - <%= booking.end_date %></p>
+        <p>Owner: <%= booking.user %></p>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

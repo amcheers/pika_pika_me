@@ -24,45 +24,51 @@
 </header>
 
 <div class="background">
-  <div id="cards">
-    <figure class="card card--water">
-      <div class="card__image-container">
-        <img src="https://cdn.bulbagarden.net/upload/thumb/f/fd/134Vaporeon.png/1200px-134Vaporeon.png" alt="Vaporeon" class="card__image">
-      </div>
+  <div class="cards mt-5">
+    <% @pokemons.each do |pokemon| %>
+     <% if pokemon.pokemon_class == "water" %>
+        <figure class="card card--water">
+      <% elsif pokemon.pokemon_class == "fire" %>
+        <figure class="card card--fire">
+      <% elsif pokemon.pokemon_class == "electro" %>
+        <figure class="card card--electric">
+      <% elsif pokemon.pokemon_class == "rock" %>
+        <figure class="card card--normal">
+      <% elsif pokemon.pokemon_class == "poison" %>
+        <figure class="card card--dark">
+      <% elsif pokemon.pokemon_class == "fairy" %>
+        <figure class="card card--fairy">
+      <% elsif pokemon.pokemon_class == "grass" %>
+        <figure class="card card--grass">
+      <% elsif pokemon.pokemon_class == "ground" %>
+        <figure class="card card--normal">
+      <% elsif pokemon.pokemon_class == "normal" %>
+        <figure class="card card--ice">
+      <% else pokemon.pokemon_class == "bug" %>
+        <figure class="card card--psychic">
+      <% end %>
 
+      <div class="card__image-container">
+        <%= cl_image_tag pokemon.photo.key, crop: :fill, class:"card__image" %>
+      </div>
       <figcaption class="card__caption">
-        <h1 class="card__name">Vaporeon</h1>
+
+        <h1 class="card__name"><%= pokemon.name %></h1>
 
         <h3 class="card__type">
-          water
+         <%= pokemon.pokemon_class %>
         </h3>
 
         <table class="card__stats">
-          <tbody><tr>
-            <th>HP</th>
-            <td>130</td>
+          <tbody>
+          <tr>
+            <th>Description</th>
+            <th><%= pokemon.description%></th>
+            <td></td>
           </tr>
           <tr>
-            <th>Attack</th>
-            <td>65</td>
-          </tr>
-
-          <tr>
-            <th>Defense</th>
-            <td>60</td>
-          </tr>
-
-          <tr>
-            <th>Special Attack</th>
-            <td>110</td>
-          </tr>
-          <tr>
-            <th>Special Defense</th>
-            <td>95</td>
-          </tr>
-          <tr>
-            <th>Speed</th>
-            <td>65</td>
+            <th>Price</th>
+            <td><%= pokemon.price_per_day %></td>
           </tr>
         </tbody></table>
 
@@ -78,113 +84,6 @@
         </div>
       </figcaption>
     </figure>
-
-    <figure class="card card--electric">
-      <div class="card__image-container">
-        <img src="https://cdn.bulbagarden.net/upload/thumb/b/bb/135Jolteon.png/1200px-135Jolteon.png" alt="Jolteon" class="card__image">
-      </div>
-
-      <figcaption class="card__caption">
-        <h1 class="card__name">Jolteon</h1>
-
-        <h3 class="card__type">
-          electric
-        </h3>
-
-        <table class="card__stats">
-          <tbody><tr>
-            <th>HP</th>
-            <td>65</td>
-          </tr>
-          <tr>
-            <th>Attack</th>
-            <td>65</td>
-          </tr>
-
-          <tr>
-            <th>Defense</th>
-            <td>60</td>
-          </tr>
-
-          <tr>
-            <th>Special Attack</th>
-            <td>110</td>
-          </tr>
-          <tr>
-            <th>Special Defense</th>
-            <td>95</td>
-          </tr>
-          <tr>
-            <th>Speed</th>
-            <td>130</td>
-          </tr>
-        </tbody></table>
-
-        <div class="card__abilities">
-          <h4 class="card__ability">
-            <span class="card__label">Ability</span>
-            Volt Absorb
-          </h4>
-          <h4 class="card__ability">
-            <span class="card__label">Hidden Ability</span>
-            Quick Feet
-          </h4>
-        </div>
-      </figcaption>
-    </figure>
-
-    <figure class="card card--fire">
-      <div class="card__image-container">
-        <img src="https://cdn.bulbagarden.net/upload/thumb/d/dd/136Flareon.png/1200px-136Flareon.png" alt="Flareon" class="card__image">
-      </div>
-
-      <figcaption class="card__caption">
-        <h1 class="card__name">Flareon</h1>
-
-        <h3 class="card__type">
-          fire
-        </h3>
-
-        <table class="card__stats">
-          <tbody><tr>
-            <th>HP</th>
-            <td>65</td>
-          </tr>
-          <tr>
-            <th>Attack</th>
-            <td>130</td>
-          </tr>
-
-          <tr>
-            <th>Defense</th>
-            <td>60</td>
-          </tr>
-
-          <tr>
-            <th>Special Attack</th>
-            <td>95</td>
-          </tr>
-          <tr>
-            <th>Special Defense</th>
-            <td>110</td>
-          </tr>
-          <tr>
-            <th>Speed</th>
-            <td>65</td>
-          </tr>
-        </tbody></table>
-
-        <div class="card__abilities">
-          <h4 class="card__ability">
-            <span class="card__label">Ability</span>
-            Flash Fire
-          </h4>
-          <h4 class="card__ability">
-            <span class="card__label">Hidden Ability</span>
-            Guts
-          </h4>
-        </div>
-      </figcaption>
-    </figure>
+    <% end  %>
   </div>
 </div>

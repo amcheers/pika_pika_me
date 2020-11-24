@@ -1,0 +1,29 @@
+<div class="col-12 col-lg-6">
+  <div class="my-bookings">
+    <ul class="list-group">
+      <% @bookings.each do |booking|%>
+      <li class="list-group-item">
+        <p><%= booking.pokemon.name%></p>
+        <p>When? <%= booking.start_date %> - <%= booking.end_date %></p>
+        <p>Owner: <%= booking.user %></p>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="col-12 col-lg-6">
+  <div class="my-pokemons">
+    <ul class="list-group">
+      <% @owned_pokemons.each do |pokemon| %>
+      <li class="list-group-item pokemon-card-item">
+        <div><%= cl_image_tag pokemon.photo.key, height: 100, width: 100, crop: :fill%></div>
+        <div>
+          <p><%= link_to pokemon.name, pokemon_path(pokemon) %></p>
+          <p><i><%= pokemon.pokemon_class %></i></p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
