@@ -8,6 +8,10 @@
 
 require "open-uri"
 
+puts "cleaning database"
+Pokemon.destroy_all
+
+
 POKEMONS = [
   {name: 'Pikachu', description: "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.", pokemon_class:"electro", link:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"},
   {name: 'Nidoran', description: "The horn on a male Nidoran’s forehead contains a powerful poison. This is a very cautious Pokémon, always straining its large ears.", pokemon_class:"poison", link:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/032.png"},

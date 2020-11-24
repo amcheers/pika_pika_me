@@ -1,17 +1,32 @@
 
-<div class="search-results">
-  <%= @pokemons.each do |pokemon| %>
-  <div class="cards">
-    <div class="card-item">
-      <div>Photo</div>
-      <div class="description">
-        <%= pokemon.name %>
-        <%= pokemon.pokemon_class %>
+<<<<<<< HEAD
+<div class="container">
+  <h2 id="search-results">Pokemons in //location//</h2>
+  <div class="row">
+
+
+    <div class="col-12 col-lg-7">
+
+      <% @pokemons.each do |pokemon| %>
+      <div class="pokemon-card-item">
+        <div class="pokemon-card-img"><%= cl_image_tag pokemon.photo.key, crop: :fill %></div>
+
+        <div>
+          <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
+          <div class="description"><%= pokemon.pokemon_class %></div>
+        </div>
+
+        <div class="price"><%= pokemon.price_per_day %> €</div>
       </div>
-      <div class="price"><%= pokeon.price_per_day %></div>
+      <% end %>
+
     </div>
+
+    <div class="col-12 col-lg-5">
+      <div id="map"></div>
+    </div>
+
   </div>
-  <div id="map">
+
   </div>
-  <% end %>
 </div>
