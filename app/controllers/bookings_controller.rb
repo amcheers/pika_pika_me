@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to pokemons_path(@pokemon)
     else
-      render :new
+      redirect_to pokemons_path(@pokemon)
+
     end
   end
 
