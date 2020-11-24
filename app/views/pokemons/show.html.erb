@@ -8,7 +8,7 @@
     <%= @pokemon.user.address %>
   </div>
   <div class="pokemon-photo">
-    <%= cl_image_path @pokemon.photo.key %>
+    <%= cl_image_tag @pokemon.photo.key %>
   </div>
 
   <div class="map-results">
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<%= simple_form_for [@booking, @pokemon] do |f| %>
+<%= simple_form_for [@pokemon, @booking] do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.submit %>
