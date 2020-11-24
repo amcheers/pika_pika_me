@@ -7,7 +7,9 @@
 
       <% @pokemons.each do |pokemon| %>
       <div class="pokemon-card-item">
-        <div class="pokemon-card-img"><%= cl_image_tag pokemon.photo.key, crop: :fill %></div>
+        <div class="pokemon-card-img">
+          <%= cl_image_tag pokemon.photo.key, crop: :fill %>
+        </div>
 
         <div>
           <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
