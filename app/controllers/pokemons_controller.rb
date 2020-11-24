@@ -7,6 +7,7 @@ class PokemonsController < ApplicationController
 
   def show
     set_pokemon
+    @booking = Booking.new
   end
 
   def new
