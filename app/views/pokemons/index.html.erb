@@ -2,9 +2,10 @@
 <div class="container">
   <h2 id="search-results">Pokemons in //location//</h2>
   <div class="row">
-    <%= @pokemons.each do |pokemon| %>
 
-    <div class="col-12 col-lg-8">
+
+    <div class="col-12 col-lg-7">
+      <%= @pokemons.each do |pokemon| %>
       <div class="pokemon-card-item">
         <div>Photo</div>
         <div class="description">
@@ -13,12 +14,14 @@
         </div>
         <div class="price"><%= pokeon.price_per_day %></div>
       </div>
+      <% end %>
     </div>
 
-    <div class="col-12 col-lg-4">
-      <div id="map">
-      </div>
+    <div class="col-12 col-lg-5">
+      <div id="map"></div>
     </div>
-    <% end %>
+
+  </div>
+
   </div>
 </div>
