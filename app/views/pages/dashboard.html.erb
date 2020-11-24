@@ -1,9 +1,16 @@
 <h1 id="dashboard-heading">My Dashboard</h1>
 
 <div class="row">
-  <div class="col-12 col">
+  <% if (@owned_pokemons.count >= 1 && @bookings.count >= 1) %>
+    <%= render 'pages/dashboard_partials/dash_owned_booked', owned_pokemons: @owned_pokemons, bookings: @bookings %>
 
-  </div>
+  <% elsif @owned_pokemons.count >= 1 %>
+    <%= render 'pages/dashboard_partials/dash_owned', owned_pokemons: @owned_pokemons %>
 
+  <% elsif @bookings.count >= 1 %>
+    <%= render 'pages/dashboard_partials/dash_booked', bookings: @bookings %>
 
+  <% else %>
+    <%= render 'pages/dashboard_partials/dash_none'%>
+  <% end %>
 </div>
