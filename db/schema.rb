@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_103620) do
     t.string "description"
     t.string "type"
     t.integer "price_per_day"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_pokemons_on_user_id"
@@ -53,5 +53,4 @@ ActiveRecord::Schema.define(version: 2020_11_24_103620) do
 
   add_foreign_key "bookings", "pokemons"
   add_foreign_key "bookings", "users"
-  add_foreign_key "pokemons", "users"
 end
