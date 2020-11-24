@@ -8,6 +8,8 @@
 
 require "open-uri"
 
+user = User.new(email: "test@user.com", encrypted_password: )
+
 file = URI.open('https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png')
 pokemon = Pokemon.new(name: 'Bulbasaur', description: "For some time after its birth, it grows by gaining nourishment from the seed on its back.", pokemon_class:"grass", price_per_day: 50, user_id: 1)
 pokemon.photo.attach(io: file, filename: 'Bulbasaur.png', content_type: 'image/png')

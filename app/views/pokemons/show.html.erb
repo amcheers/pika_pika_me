@@ -1,0 +1,20 @@
+<h1><%= @pokemon.name %></h1>
+
+<div class="pokemon-results">
+  <div class="pokemon-container">
+    <%= pokemon.description %>
+    <%= pokemon.type %>
+    <%= pokemon.price_per_day %>
+    <%= pokemon.user.address %>
+  </div>
+
+  <div class="map-results">
+    <p>Map results show here!</p>
+  </div>
+</div>
+
+<%= simple_form_for @pokemon do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit %>
+  <% end %>
