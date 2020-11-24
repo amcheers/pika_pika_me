@@ -22,6 +22,9 @@ class PokemonsController < ApplicationController
     end
   end
 
+  def destroy
+    set_pokemon.destroy
+    redirect_to dashboard_path
   def edit
     set_pokemon
   end
