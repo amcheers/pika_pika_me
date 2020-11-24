@@ -1,5 +1,11 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
+
+  def new
+    @pokemon = Pokemon.find(params[:pokemon_id])
+    @booking = Booking.new
+  end
+  
   def create
     @booking = Booking.new(booking_params)
     @pokemon = Pokemon.find(params[:pokemon_id])
