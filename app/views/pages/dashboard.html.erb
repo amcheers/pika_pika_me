@@ -2,13 +2,15 @@
 
 <div class="row">
   <% if (@owned_pokemons.count >= 1 && @bookings.count >= 1) %>
-    <%= render 'pages/dashboard_partials/dash-owned-booked', owned_pokemons: @owned_pokemons, owned_pokemons: @owned_pokemons %>
+    <%= render 'pages/dashboard_partials/dash_owned_booked', owned_pokemons: @owned_pokemons, bookings: @bookings %>
 
   <% elsif @owned_pokemons.count >= 1 %>
     <%= render 'pages/dashboard_partials/dash_owned', owned_pokemons: @owned_pokemons %>
 
-  <% else %>
-    <%= render 'pages/dashboard_partials/dash-booked', owned_pokemons: @owned_pokemons %>
+  <% elsif @bookings.count >= 1 %>
+    <%= render 'pages/dashboard_partials/dash_booked', bookings: @bookings %>
 
+  <% else %>
+    <%= render 'pages/dashboard_partials/dash_none'%>
   <% end %>
 </div>
