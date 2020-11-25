@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
   def home
-    @pokemons = Pokemon.all
+    @pokemons = Pokemon.take(6)
   end
 
   def dashboard
