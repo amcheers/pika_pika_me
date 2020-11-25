@@ -78,8 +78,7 @@ h1, h2, h3, h4, h5 {
     }
     width: 100%;
 
-    th, td {
-      width: 50%;
+    th.description {
       padding: 0.25em 0.5em 0;
     }
 
@@ -87,7 +86,7 @@ h1, h2, h3, h4, h5 {
 
   &__abilities {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
   &__ability {
     margin-top: 1em;
