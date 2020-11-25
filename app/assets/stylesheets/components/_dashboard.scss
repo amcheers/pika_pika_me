@@ -24,6 +24,10 @@
   }
 }
 
+.dash-container-heading {
+  padding-bottom: 20px;
+}
+
 .trash-icon {
   font-size: 30px;
   text-decoration: none;
@@ -34,6 +38,12 @@
   &:hover {
     opacity: 1;
   }
+}
+
+.dash-date {
+  text-align: right;
+  margin-right: 30px;
+  margin-top: 30px;
 }
 
 .edit-btn {
