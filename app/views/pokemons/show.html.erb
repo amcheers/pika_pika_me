@@ -1,19 +1,18 @@
 <div class="background-show">
   <div class="container2">
 
-    <div>
-    <h1><%= @pokemon.name %></h1>
-      <div class="pokemon-results">
-        <div class="pokemon-container">
-          <%= @pokemon.description %>
-          <%= @pokemon.pokemon_class %>
-          € <%= @pokemon.price_per_day %>
-          <%= @pokemon.user.address %>
-        </div>
-      <div class="pokemon-photo">
-        <%= cl_image_tag @pokemon.photo.key %>
-      </div>
-    </div>
+
+<div class="pokemon-results">
+  <div class="pokemon-container">
+    <%= @pokemon.description %>
+    <%= @pokemon.pokemon_class %>
+    <%= @pokemon.price_per_day %>
+    <%= @pokemon.user.address %>
+    <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %>
+  </div>
+  <div class="pokemon-photo">
+    <%= cl_image_tag @pokemon.photo.key %>
+  </div>
 
       <div class="map-results">
         <p>Map results show here!</p>
