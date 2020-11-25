@@ -1,4 +1,6 @@
-<h1><%= @pokemon.name %></h1>
+<div class="background-show">
+  <div class="container2">
+
 
 <div class="pokemon-results">
   <div class="pokemon-container">
@@ -12,18 +14,17 @@
     <%= cl_image_tag @pokemon.photo.key %>
   </div>
 
-  <div class="map-results">
-    <p>Map results show here!</p>
+      <div class="map-results">
+        <p>Map results show here!</p>
+      </div>
+        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <%= simple_form_for [@pokemon, @booking] do |f| %>
+          <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" } %>
+          <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
+          <%= f.button :submit, "Book", class: "btn btn-danger" %>
+        <% end %>
+        </div>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-
-    <%= simple_form_for [@pokemon, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" } %>
-      <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
-      <%= f.button :submit, "Book", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
