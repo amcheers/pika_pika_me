@@ -24,17 +24,25 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "../plugins/flatpickr"
 // Internal imports, e.g:
-
+import flatpickr from "flatpickr";
+import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 // import { initSelect2 } from '../components/init_select2';
-import { flatpickr } from '../plugins/flatpickr';
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
-  flatpickr();
+  flatpickr("#range_start", {
+    altInput: true,
+    plugins: [new rangePlugin({ input: "#range_end"})],
+    disable: [
+        {
+            from: "1900-01-01",
+            to: Date.now()
+        }
+    ]
+  });
 
 });
