@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @pokemons = Pokemon.take(6)
   end
 
-  def dashboard
+  def dashboard   
     @bookings = current_user.bookings
     @owned_pokemons = current_user.pokemons
   end
