@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @booking.pokemon = @pokemon
     @booking.user = current_user
     if @booking.save
-      redirect_to pokemons_path(@pokemon)
+      redirect_to dashboard_path
     else
       render "pokemons/show"
     end
