@@ -3,6 +3,18 @@ class PokemonsController < ApplicationController
 
   def index
     @pokemons = Pokemon.all
+    @users = User.all
+
+    @markers = @pokemons.map do |pokemon|
+      pokemon.user.geocode.map do |user|
+      {
+        lat: pokemon.user.latitude,
+        lng: pokemon.user.longitude
+      }
+    end
+  end
+  @markers = @markers.map {|name| name[0]}
+  
   end
 
   def show
