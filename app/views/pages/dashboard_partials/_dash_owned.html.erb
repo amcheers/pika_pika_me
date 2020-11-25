@@ -1,21 +1,52 @@
 <div class="col-12 col-lg-6">
-  <div class="my-pokemons">
-    <ul class="list-group">
-      <% @owned_pokemons.each do |pokemon| %>
-      <li class="list-group-item pokemon-card-item">
-        <div><%= cl_image_tag pokemon.photo.key, height: 100, width: 100, crop: :fill%></div>
-        <div>
-          <p><%= link_to pokemon.name, pokemon_path(pokemon) %></p>
-          <p><i><%= pokemon.pokemon_class %></i></p>
-        </div>
-      </li>
+  <h3 class="dash-container-heading">My Pokemons</h3>
+  <div class="dash-container">
+    <div class="grid">
+     <% @owned_pokemons.each do |pokemon| %>
+      <% if pokemon.pokemon_class == "water" %>
+        <figure class="card card--water">
+      <% elsif pokemon.pokemon_class == "fire" %>
+        <figure class="card card--fire">
+      <% elsif pokemon.pokemon_class == "electro" %>
+        <figure class="card card--electric">
+      <% elsif pokemon.pokemon_class == "rock" %>
+        <figure class="card card--normal">
+      <% elsif pokemon.pokemon_class == "poison" %>
+        <figure class="card card--dark">
+      <% elsif pokemon.pokemon_class == "fairy" %>
+        <figure class="card card--fairy">
+      <% elsif pokemon.pokemon_class == "grass" %>
+        <figure class="card card--grass">
+      <% elsif pokemon.pokemon_class == "ground" %>
+        <figure class="card card--normal">
+      <% elsif pokemon.pokemon_class == "normal" %>
+        <figure class="card card--ice">
+      <% else pokemon.pokemon_class == "bug" %>
+        <figure class="card card--psychic">
       <% end %>
-    </ul>
-  </div>
+
+     <div class="card__image-container">
+      <%= cl_image_tag pokemon.photo.key, crop: :fill, class:"card__image" %>
+    </div>
+
+    <figcaption class="card__caption">
+      <h1 class="card__name"><%= link_to pokemon.name, pokemon_path(pokemon) %></h1>
+      <h3 class="card__type"><%= pokemon.pokemon_class %></h3>
+    </figcaption>
+  </figure>
+  <% end %>
+</div>
+<div><%= link_to "Add New Pokemon", new_pokemon_path, class: "btn btn-primary"%></div>
+</div>
 </div>
 
+
 <div class="col-12 col-lg-6">
-  <div id="discover-new">
-    <h1><%= link_to "Discover new pokemons", root_path %></h1>
+  <h3 class="dash-container-heading">My Pokemon Bookings</h3>
+  <div class="dash-container" id="discover-new" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://freepngimg.com/thumb/pokemon/37475-6-pikachu-transparent-image.png)">
+    <div id="discover-new-content">
+      <h1>You Can Find New Pokemons Anywhere</h1>
+      <div><%= link_to "Discover", root_path, class: "btn btn-primary"%></div>
+    </div>
   </div>
 </div>
