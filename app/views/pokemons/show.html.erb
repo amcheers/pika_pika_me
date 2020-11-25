@@ -4,11 +4,12 @@
 
 <div class="pokemon-results">
   <div class="pokemon-container">
-    <%= @pokemon.description %>
-    <%= @pokemon.pokemon_class %>
-    <%= @pokemon.price_per_day %>
-    <%= @pokemon.user.address %>
-    <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %>
+    <h2><%= @pokemon.name %></h2>
+    <p><i><%= @pokemon.pokemon_class %></i></p>
+    <p><%= @pokemon.description%></p>
+    <p>Price: <%= @pokemon.price_per_day %>
+    <p>Address: <%= @pokemon.user.address %></p>
+    <p>Owner: <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
   </div>
   <div class="pokemon-photo">
     <%= cl_image_tag @pokemon.photo.key %>
