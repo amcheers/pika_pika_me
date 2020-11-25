@@ -6,6 +6,7 @@
     <%= @pokemon.pokemon_class %>
     <%= @pokemon.price_per_day %>
     <%= @pokemon.user.address %>
+    <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %>
   </div>
   <div class="pokemon-photo">
     <%= cl_image_tag @pokemon.photo.key %>

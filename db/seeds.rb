@@ -25,8 +25,8 @@ POKEMONS = [
   {name: 'Geowaz', description: "After it has shed its skin, its body becomes soft and light. However, when it comes into contact with the air, it immediately hardens again.", pokemon_class:"rock", link: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/076.png"}
 ]
 
-User.create(email: "test@user.com", password: "123456", address: "pokemonstreet 5")
-User.create(email: "test@user2.com", password: "123456", address: "pikachuway 46")
+User.create(email: "test@user.com", password: "123456", address: "pokemonstreet 5", first_name: "Ash", last_name: "Ketchum")
+User.create(email: "test@user2.com", password: "123456", address: "pikachuway 46", first_name: "Serena", last_name: "Mayuki")
 
 POKEMONS.each do |pokemon_hash|
   file = URI.open(pokemon_hash[:link])
