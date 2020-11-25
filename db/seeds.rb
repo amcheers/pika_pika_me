@@ -25,10 +25,11 @@ POKEMONS = [
   {name: 'Geowaz', description: "After it has shed its skin, its body becomes soft and light. However, when it comes into contact with the air, it immediately hardens again.", pokemon_class:"rock", link: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/076.png"}
 ]
 
-
+puts "creating users"
 User.create(email: "test@user.com", password: "123456", address: "ijsbaanpad 9, Amsterdam", first_name: "Ash", last_name: "Ketchum")
 User.create(email: "test@user2.com", password: "123456", address: "graafschapstraat 15, Amsterdam", first_name: "Serena", last_name: "Mayuki")
 
+puts "creating pokemons"
 POKEMONS.each do |pokemon_hash|
   file = URI.open(pokemon_hash[:link])
   pokemon = Pokemon.new(
@@ -41,3 +42,5 @@ POKEMONS.each do |pokemon_hash|
   pokemon.photo.attach(io: file, filename: "#{pokemon_hash[:name]}.png", content_type: 'image/png')
   pokemon.save!
 end
+
+puts "Done!"
