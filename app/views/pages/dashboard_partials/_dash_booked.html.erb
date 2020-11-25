@@ -43,13 +43,16 @@
           <h3 class="card__type"><%= booking.pokemon.pokemon_class %></h3>
         <table class="card__stats">
           <tbody>
-          <tr>
-            <th>When?</th>
-            <th><%= booking.start_date%> - <%= booking.start_date%></th>
-            <td></td>
+           <tr>
+            <th>From:</th>
+            <td><%= booking.start_date %></td>
           </tr>
           <tr>
-            <th>Owner</th>
+            <th>Till:</th>
+            <td><%= booking.end_date%></td>
+          </tr>
+          <tr>
+            <th>Owner:</th>
             <td></td>
           </tr>
         </tbody></table>

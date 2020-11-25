@@ -25,6 +25,11 @@
         <figure class="card card--psychic">
       <% end %>
 
+    <div><%= link_to pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure?"} do %>
+      <div class="trash-icon"><i class="fas fa-trash"></i></div>
+    <% end %>
+    </div>
+
      <div class="card__image-container">
       <%= cl_image_tag pokemon.photo.key, crop: :fill, class:"card__image" %>
     </div>
@@ -76,12 +81,15 @@
         <table class="card__stats">
           <tbody>
           <tr>
-            <th>When?</th>
-            <th><%= booking.start_date%> - <%= booking.start_date%></th>
-            <td></td>
+            <th>From:</th>
+            <td><%= booking.start_date %></td>
           </tr>
           <tr>
-            <th>Owner</th>
+            <th>Till:</th>
+            <td><%= booking.end_date%></td>
+          </tr>
+          <tr>
+            <th>Owner:</th>
             <td></td>
           </tr>
         </tbody></table>
