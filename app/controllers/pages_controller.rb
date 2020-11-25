@@ -7,5 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @bookings = current_user.bookings
     @owned_pokemons = current_user.pokemons
+    @date = Date.today
+    raise
   end
 end
