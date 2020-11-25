@@ -1,25 +1,49 @@
 <div class="container">
-  <h2 id="search-results">Pokemons in //location//</h2>
+  <h2 id="search-results">Pokemons in Amsterdam</h2>
   <div class="row">
 
 
     <div class="col-12 col-lg-7">
+      <div class="pokemon-cards">
+        <% @pokemons.each do |pokemon| %>
+        <% if pokemon.pokemon_class == "water" %>
+            <figure class="card card--water">
+          <% elsif pokemon.pokemon_class == "fire" %>
+            <figure class="card card--fire">
+          <% elsif pokemon.pokemon_class == "electro" %>
+            <figure class="card card--electric">
+          <% elsif pokemon.pokemon_class == "rock" %>
+            <figure class="card card--normal">
+          <% elsif pokemon.pokemon_class == "poison" %>
+            <figure class="card card--dark">
+          <% elsif pokemon.pokemon_class == "fairy" %>
+            <figure class="card card--fairy">
+          <% elsif pokemon.pokemon_class == "grass" %>
+            <figure class="card card--grass">
+          <% elsif pokemon.pokemon_class == "ground" %>
+            <figure class="card card--normal">
+          <% elsif pokemon.pokemon_class == "normal" %>
+            <figure class="card card--ice">
+          <% else pokemon.pokemon_class == "bug" %>
+            <figure class="card card--psychic">
+        <% end %>
 
-      <% @pokemons.each do |pokemon| %>
-      <div class="pokemon-card-item">
-        <div class="pokemon-card-img">
-          <%= cl_image_tag pokemon.photo.key, crop: :fill %>
-        </div>
 
-        <div>
-          <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
-          <div class="description"><%= pokemon.pokemon_class %></div>
-        </div>
+            <div class="pokemon-card-item">
+              <div class="pokemon-card-img">
+                <%= cl_image_tag pokemon.photo.key, crop: :fill %>
+              </div>
 
-        <div class="price"><%= pokemon.price_per_day %> €</div>
+              <div>
+                <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
+                <div class="description"><%= pokemon.pokemon_class %></div>
+              </div>
+
+              <div class="price"><%= pokemon.price_per_day %> €</div>
+            </div>
+          </figure>
+        <% end %>
       </div>
-      <% end %>
-
     </div>
 
     <div class="col-12 col-lg-5">
@@ -28,8 +52,6 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
-
   </div>
-
-  </div>
+</div>
 </div>

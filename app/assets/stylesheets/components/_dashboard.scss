@@ -10,7 +10,7 @@
   border: 0.2px solid grey;
   background-color: lightyellow;
   margin-bottom: 50px;
-  height: 100vh
+  min-height: 100vh;
 }
 
 #discover-new{
@@ -24,6 +24,10 @@
   }
 }
 
+.dash-container-heading {
+  padding-bottom: 20px;
+}
+
 .trash-icon {
   font-size: 30px;
   text-decoration: none;
@@ -34,6 +38,12 @@
   &:hover {
     opacity: 1;
   }
+}
+
+.dash-date {
+  text-align: right;
+  margin-right: 30px;
+  margin-top: 30px;
 }
 
 .edit-btn {
