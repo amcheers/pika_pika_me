@@ -16,25 +16,13 @@
   </div>
 </div>
 
-<%= simple_form_for [@pokemon, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
 
-<p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Check rental price</button>
-</p>
-<div class="row">
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body">
-        <%= @pokemon.name %>
-        <%= @booking.start_date %>
-        <%= @booking.end_date %>
-        <%= @booking.total_price %>
-
-      </div>
-    </div>
+    <%= simple_form_for [@pokemon, @booking] do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" } %>
+      <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
+      <%= f.button :submit, "Book", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>

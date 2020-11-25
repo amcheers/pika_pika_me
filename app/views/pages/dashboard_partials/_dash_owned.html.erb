@@ -25,6 +25,12 @@
         <figure class="card card--psychic">
       <% end %>
 
+    <div class="edit-btn"><%= link_to "Edit", edit_pokemon_path(pokemon), class: "btn btn-light"%></div>
+    <div><%= link_to pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure?"} do %>
+      <div class="trash-icon"><i class="fas fa-trash"></i></div>
+    <% end %>
+    </div>
+
      <div class="card__image-container">
       <%= cl_image_tag pokemon.photo.key, crop: :fill, class:"card__image" %>
     </div>
