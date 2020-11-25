@@ -71,7 +71,7 @@
         </div>
 
         <figcaption class="card__caption">
-          <h1 class="card__name"><%= booking.pokemon.name %></h1>
+          <h1 class="card__name"><%= link_to booking.pokemon.name, pokemon_path(booking.pokemon) %></h1>
           <h3 class="card__type"><%= booking.pokemon.pokemon_class %></h3>
         <table class="card__stats">
           <tbody>
