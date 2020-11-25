@@ -21,3 +21,20 @@
     <%= f.input :end_date %>
     <%= f.submit %>
   <% end %>
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Check rental price</button>
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        <%= @pokemon.name %>
+        <%= @booking.start_date %>
+        <%= @booking.end_date %>
+        <%= @booking.total_price %>
+
+      </div>
+    </div>
+  </div>
+</div>

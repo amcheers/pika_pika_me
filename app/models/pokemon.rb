@@ -6,4 +6,6 @@ class Pokemon < ApplicationRecord
   validates :description, presence: true
   validates :pokemon_class, presence: true
   validates :price_per_day, presence: true
+
+  
 end
