@@ -8,4 +8,8 @@ class Pokemon < ApplicationRecord
   validates :pokemon_class, presence: true
   validates :price_per_day, presence: true
 
+<<<<<<< HEAD
+  
+=======
+>>>>>>> master
 end
