@@ -39,18 +39,21 @@
         </div>
 
         <figcaption class="card__caption">
-          <h1 class="card__name"><%= booking.pokemon.name %></h1>
+          <h1 class="card__name"><%= link_to booking.pokemon.name, pokemon_path(booking.pokemon) %></h1>
           <h3 class="card__type"><%= booking.pokemon.pokemon_class %></h3>
         <table class="card__stats">
           <tbody>
-          <tr>
-            <th>When?</th>
-            <th><%= booking.start_date%> - <%= booking.start_date%></th>
-            <td></td>
+           <tr>
+            <th>From:</th>
+            <td><%= booking.start_date %></td>
           </tr>
           <tr>
-            <th>Owner</th>
-            <td></td>
+            <th>Till:</th>
+            <td><%= booking.end_date%></td>
+          </tr>
+          <tr>
+            <th>Owner:</th>
+            <td><%= booking.pokemon.user.email %></td>
           </tr>
         </tbody></table>
         </figcaption>
