@@ -36,7 +36,6 @@ import { activateBookingTab, activateDashTab } from "./dash-tabs";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initMapbox();
   flatpickr("#range_start", {
     altInput: true,
     plugins: [new rangePlugin({ input: "#range_end"})],
@@ -47,5 +46,5 @@ document.addEventListener('turbolinks:load', () => {
         }
     ]
   });
-
+  initMapbox();
 });
