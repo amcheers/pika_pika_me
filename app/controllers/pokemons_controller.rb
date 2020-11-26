@@ -6,14 +6,12 @@ class PokemonsController < ApplicationController
     @users = User.all
 
     @markers = @pokemons.map do |pokemon|
-      pokemon.user.geocode.map do |user|
-        {
-          lat: pokemon.user.latitude,
-          lng: pokemon.user.longitude
-        }
-      end
+      {
+        lat: pokemon.user.latitude,
+        lng: pokemon.user.longitude
+      }
     end
-    @markers = @markers.map {|name| name[0]}
+    @markers.reject! { |marker| marker[:lat].nil? || marker[:lng].nil? }
   end
 
   def show
