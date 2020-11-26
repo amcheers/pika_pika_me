@@ -5,8 +5,18 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @bookings = current_user.bookings
     @owned_pokemons = current_user.pokemons
+    @bookings = current_user.bookings
     @date = Date.today
+
+    @upcoming = []
+    @past = []
+    @bookings.each do |booking|
+      if booking.start_date >= @date
+        @upcoming << booking
+      else
+        @past << booking
+      end
+    end
   end
 end

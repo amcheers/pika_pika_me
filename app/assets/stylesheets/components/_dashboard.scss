@@ -1,32 +1,87 @@
-#dashboard-heading {
-  padding-top: 20px;
+.dash-bg {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzd8fGNvbG9yZnVsJTIwYmFja2dyb3VuZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  background-size: cover;
+}
+
+// DASH NAV
+
+.dash-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-left: 100px;
+  margin-right: 100px;
+  color: white;
+}
+
+.dash-date {
+  text-align: right;
+}
+
+.nav-link {
+  color: white;
+  font-weight: bolder;
+  &:hover {
+    color: #FBD74A;
+    font-weight: bolder;
+  }
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: black;
+    background-color: #FBD74A;
+}
+
+// DASH CONTAINER
+
+.dash-container-heading {
   padding-bottom: 20px;
+  padding-top: 20px;
+  color: white;
 }
 
 .dash-container {
   background-size: cover;
   margin-left: 30px;
   margin-right: 30px;
-  border: 0.2px solid grey;
-  background-color: lightyellow;
   margin-bottom: 50px;
-  min-height: 100vh;
+  padding-bottom: 100px;
 }
+
+// MY BOOKINGS
 
 #discover-new{
   display: flex;
   justify-content: center;
   align-items: center;
-  #discover-new-content {
+}
+
+#discover-new-content {
     color: white;
     padding: 15px;
     margin: 0 auto;
   }
+
+
+// MY POKEMONS
+.add-poke-image {
+  background-size: cover;
+  padding-left: 25px;
+  img {
+    width: 400px;
+    max-height: none;
+  }
 }
 
-.dash-container-heading {
-  padding-bottom: 20px;
+.dash-content-container {
+  margin: 0 auto;
+  width: 60%;
 }
+
+.relative {
+  position: relative;
+}
+
 
 .trash-icon {
   font-size: 30px;
@@ -38,12 +93,6 @@
   &:hover {
     opacity: 1;
   }
-}
-
-.dash-date {
-  text-align: right;
-  margin-right: 30px;
-  margin-top: 30px;
 }
 
 .edit-btn {
