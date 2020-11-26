@@ -1,17 +1,15 @@
 <div class="container">
-  <h2 id="search-results">Pokemons in Amsterdam</h2>
-    <%= form_tag pokemons_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a pokemon"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
   <div class="row">
-
-
-    <div class="col-12 col-lg-7">
+    <div class="col-12 col-lg-6">
+      <h2 id="search-results">Pokemons in Amsterdam</h2>
+      <%= form_tag pokemons_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a pokemon"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
       <div class="pokemon-cards">
         <% @pokemons.each do |pokemon| %>
         <% if pokemon.pokemon_class == "water" %>
@@ -36,7 +34,7 @@
             <figure class="card card--psychic">
         <% end %>
 
-This indentation with the figure ending ending way later looks very funny? Ask tomorrow.
+<%# This indentation with the figure ending ending way later looks very funny? Ask tomorrow. %>
             <div class="pokemon-card-item">
               <div class="pokemon-card-img">
                 <%= cl_image_tag pokemon.photo.key, crop: :fill %>
@@ -54,9 +52,9 @@ This indentation with the figure ending ending way later looks very funny? Ask t
       </div>
     </div>
 
-    <div class="col-12 col-lg-5">
+    <div class="col-12 col-lg-6">
       <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 50vw; height: 100vh; position: sticky; top: 0;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
