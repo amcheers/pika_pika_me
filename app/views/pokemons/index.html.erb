@@ -1,62 +1,65 @@
-<div class="container">
-  <h2 id="search-results">Pokemons in Amsterdam</h2>
-    <%= form_tag pokemons_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a pokemon"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+<div class="background-show">
+
+
   <div class="row">
-
-
-    <div class="col-12 col-lg-7">
-      <div class="pokemon-cards">
-        <% @pokemons.each do |pokemon| %>
-        <% if pokemon.pokemon_class == "water" %>
-            <figure class="card card--water">
-          <% elsif pokemon.pokemon_class == "fire" %>
-            <figure class="card card--fire">
-          <% elsif pokemon.pokemon_class == "electro" %>
-            <figure class="card card--electric">
-          <% elsif pokemon.pokemon_class == "rock" %>
-            <figure class="card card--normal">
-          <% elsif pokemon.pokemon_class == "poison" %>
-            <figure class="card card--dark">
-          <% elsif pokemon.pokemon_class == "fairy" %>
-            <figure class="card card--fairy">
-          <% elsif pokemon.pokemon_class == "grass" %>
-            <figure class="card card--grass">
-          <% elsif pokemon.pokemon_class == "ground" %>
-            <figure class="card card--normal">
-          <% elsif pokemon.pokemon_class == "normal" %>
-            <figure class="card card--ice">
-          <% else pokemon.pokemon_class == "bug" %>
-            <figure class="card card--psychic">
-        <% end %>
-
-This indentation with the figure ending ending way later looks very funny? Ask tomorrow.
-            <div class="pokemon-card-item">
-              <div class="pokemon-card-img">
-                <%= cl_image_tag pokemon.photo.key, crop: :fill %>
-              </div>
-
-              <div>
-                <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
-                <div class="description"><%= pokemon.pokemon_class %></div>
-              </div>
-
-              <div class="price"><%= pokemon.price_per_day %> €</div>
+    <div class="col-12 col-lg-6">
+        <h2 id="search-results">Pokemons in Amsterdam</h2>
+        <%= form_tag pokemons_path, method: :get, class: "search-bar" do %>
+            <div class="wrapper d-flex">
+            <%= text_field_tag :query,
+              params[:query],
+              placeholder: "Find a pokemon"
+            %>
+            <%= submit_tag "Search", class: "button-home" %>
             </div>
-          </figure>
         <% end %>
+      <div class="container2">
+        <div class="pokemon-cards">
+          <% @pokemons.each do |pokemon| %>
+          <% if pokemon.pokemon_class == "water" %>
+              <figure class="card card--water">
+            <% elsif pokemon.pokemon_class == "fire" %>
+              <figure class="card card--fire">
+            <% elsif pokemon.pokemon_class == "electro" %>
+              <figure class="card card--electric">
+            <% elsif pokemon.pokemon_class == "rock" %>
+              <figure class="card card--normal">
+            <% elsif pokemon.pokemon_class == "poison" %>
+              <figure class="card card--dark">
+            <% elsif pokemon.pokemon_class == "fairy" %>
+              <figure class="card card--fairy">
+            <% elsif pokemon.pokemon_class == "grass" %>
+              <figure class="card card--grass">
+            <% elsif pokemon.pokemon_class == "ground" %>
+              <figure class="card card--normal">
+            <% elsif pokemon.pokemon_class == "normal" %>
+              <figure class="card card--ice">
+            <% else pokemon.pokemon_class == "bug" %>
+              <figure class="card card--psychic">
+          <% end %>
+  
+  <%# This indentation with the figure ending ending way later looks very funny? Ask tomorrow. %>
+              <div class="pokemon-card-item">
+                <div class="pokemon-card-img">
+                  <%= cl_image_tag pokemon.photo.key, crop: :fill %>
+                </div>
+  
+                <div>
+                  <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
+                  <div class="description"><%= pokemon.pokemon_class %></div>
+                </div>
+  
+                <div class="price"><%= pokemon.price_per_day %> €</div>
+              </div>
+            </figure>
+          <% end %>
+        </div>
       </div>
-    </div>
+      </div>
 
-    <div class="col-12 col-lg-5">
+    <div class="col-12 col-lg-6">
       <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 50vw; height: 100vh; position: sticky; top: 0;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
