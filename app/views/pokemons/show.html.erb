@@ -1,33 +1,33 @@
 <div class="background-show">
-  <div class="map-results-container">
-    <div class="container2">
-      <div class="pokemon-results">
-        <div class="pokemon-container">
-          <h2><%= @pokemon.name %></h2>
-          <p><i><%= @pokemon.pokemon_class %></i></p>
-          <p><%= @pokemon.description%></p>
-          <p>Price: <%= @pokemon.price_per_day %>
-          <p>Address: <%= @pokemon.user.address %></p>
-          <p>Owner: <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
-        </div>
-        <div class="pokemon-photo">
-          <%= cl_image_tag @pokemon.photo.key %>
-        </div>
-  
-        <div class="map-results">
-          <p>Map results show here!</p>
-        </div>
-        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-          <%= simple_form_for [@pokemon, @booking] do |f| %>
-            <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" } %>
-            <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
-            <%= f.button :submit, "Book", class: "btn btn-danger" %>
-          <% end %>
+  <div class="map-results-container ">
+    <div class="col-12 col-lg-6">
+      <div class="container2">
+        <div class="pokemon-results">
+          <div class="pokemon-container">
+            <h2><%= @pokemon.name %></h2>
+            <p><i><%= @pokemon.pokemon_class %></i></p>
+            <p><%= @pokemon.description%></p>
+            <p>Price: <%= @pokemon.price_per_day %>
+            <p>Address: <%= @pokemon.user.address %></p>
+            <p>Owner: <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
+          </div>
+          <div class="pokemon-photo">
+            <%= cl_image_tag @pokemon.photo.key %>
+          </div>
+          
+          <div class="form-wrapper" style="width: 200px; margin: 0 auto;">
+            <%= simple_form_for [@pokemon, @booking] do |f| %>
+              <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" } %>
+              <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
+              <%= f.button :submit, "Book", class: "btn btn-danger" %>
+            <% end %>
+            <%= link_to "Back", pokemons_path, class: "btn btn-danger mt-5" %>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-5">
-      <div id='map' style='width: 400px; height: 100vh; position:sticky;'></div>
+    <div class="col-12 col-lg-6 position: sticky;">
+      <div id='map' style='width: 50vw; height: 100vh; position: sticky; top: 0;'></div>
       <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiYWNoZWVycyIsImEiOiJja2g3bnJobWUwOTB6MnBuenVuYW80emowIn0.9aQqGyFOHUbtAMoN9eCZIg';
         var map = new mapboxgl.Map({
