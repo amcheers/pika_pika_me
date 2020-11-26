@@ -5,7 +5,7 @@
 <div class="pokemon-results">
   <div class="pokemon-container">
     <h2><%= @pokemon.name %></h2>
-    <p><i><%= @pokemon.pokemon_class %></i></p>
+    <p><i><%= @pokemon.kind.name %></i></p>
     <p><%= @pokemon.description%></p>
     <p>Price: <%= @pokemon.price_per_day %>
     <p>Address: <%= @pokemon.user.address %></p>

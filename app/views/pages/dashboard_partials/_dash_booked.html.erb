@@ -12,25 +12,25 @@
   <h3 class="dash-container-heading">My Pokemon Bookings</h3>
   <div class="dash-container">
     <% bookings.each do |booking|%>
-    <% if booking.pokemon.pokemon_class == "water" %>
+    <% if booking.pokemon.kind.name == "water" %>
       <figure class="card card--water">
-      <% elsif booking.pokemon.pokemon_class == "fire" %>
+      <% elsif booking.pokemon.kind.name == "fire" %>
       <figure class="card card--fire">
-        <% elsif booking.pokemon.pokemon_class == "electro" %>
+        <% elsif booking.pokemon.kind.name == "electro" %>
       <figure class="card card--electric">
-        <% elsif booking.pokemon.pokemon_class == "rock" %>
+        <% elsif booking.pokemon.kind.name == "rock" %>
       <figure class="card card--normal">
-        <% elsif booking.pokemon.pokemon_class == "poison" %>
+        <% elsif booking.pokemon.kind.name == "poison" %>
       <figure class="card card--dark">
-        <% elsif booking.pokemon.pokemon_class == "fairy" %>
+        <% elsif booking.pokemon.kind.name == "fairy" %>
       <figure class="card card--fairy">
-        <% elsif booking.pokemon.pokemon_class == "grass" %>
+        <% elsif booking.pokemon.kind.name == "grass" %>
       <figure class="card card--grass">
-        <% elsif booking.pokemon.pokemon_class == "ground" %>
+        <% elsif booking.pokemon.kind.name == "ground" %>
       <figure class="card card--normal">
-        <% elsif booking.pokemon.pokemon_class == "normal" %>
+        <% elsif booking.pokemon.kind.name == "normal" %>
       <figure class="card card--ice">
-        <% else booking.pokemon.pokemon_class == "bug" %>
+        <% else booking.pokemon.kind.name == "bug" %>
       <figure class="card card--psychic">
     <% end %>
 
@@ -40,7 +40,7 @@
 
         <figcaption class="card__caption">
           <h1 class="card__name"><%= link_to booking.pokemon.name, pokemon_path(booking.pokemon) %></h1>
-          <h3 class="card__type"><%= booking.pokemon.pokemon_class %></h3>
+          <h3 class="card__type"><%= booking.pokemon.kind.name %></h3>
         <table class="card__stats">
           <tbody>
            <tr>

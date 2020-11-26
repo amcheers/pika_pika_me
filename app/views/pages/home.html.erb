@@ -27,27 +27,27 @@
     <div class="cards">
     <% @pokemons.each do |pokemon| %>
     <%= link_to pokemon_path(pokemon), class: "cards-text" do %>
-     <% if pokemon.pokemon_class == "water" %>
-        <figure class="card card--water">
-      <% elsif pokemon.pokemon_class == "fire" %>
-        <figure class="card card--fire">
-      <% elsif pokemon.pokemon_class == "electro" %>
-        <figure class="card card--electric">
-      <% elsif pokemon.pokemon_class == "rock" %>
-        <figure class="card card--normal">
-      <% elsif pokemon.pokemon_class == "poison" %>
-        <figure class="card card--dark">
-      <% elsif pokemon.pokemon_class == "fairy" %>
-        <figure class="card card--fairy">
-      <% elsif pokemon.pokemon_class == "grass" %>
-        <figure class="card card--grass">
-      <% elsif pokemon.pokemon_class == "ground" %>
-        <figure class="card card--normal">
-      <% elsif pokemon.pokemon_class == "normal" %>
-        <figure class="card card--ice">
-      <% else pokemon.pokemon_class == "bug" %>
-        <figure class="card card--psychic">
-      <% end %>
+        <% if pokemon.kind.name == "water" %>
+            <figure class="card card--water">
+          <% elsif pokemon.kind.name == "fire" %>
+            <figure class="card card--fire">
+          <% elsif pokemon.kind.name == "electro" %>
+            <figure class="card card--electric">
+          <% elsif pokemon.kind.name == "rock" %>
+            <figure class="card card--normal">
+          <% elsif pokemon.kind.name == "poison" %>
+            <figure class="card card--dark">
+          <% elsif pokemon.kind.name == "fairy" %>
+            <figure class="card card--fairy">
+          <% elsif pokemon.kind.name == "grass" %>
+            <figure class="card card--grass">
+          <% elsif pokemon.kind.name == "ground" %>
+            <figure class="card card--normal">
+          <% elsif pokemon.kind.name == "normal" %>
+            <figure class="card card--ice">
+          <% else pokemon.kind.name == "bug" %>
+            <figure class="card card--psychic">
+        <% end %>
 
       <div class="card__image-container">
         <%= cl_image_tag pokemon.photo.key, crop: :fill, class:"card__image" %>
@@ -57,7 +57,7 @@
         <h1 class="card__name"><%= pokemon.name %></h1>
 
         <h3 class="card__type">
-         <%= pokemon.pokemon_class %>
+         <%= pokemon.kind.name %>
         </h3>
 
         <table class="card__stats">

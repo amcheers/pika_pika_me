@@ -6,25 +6,25 @@
     <div class="col-12 col-lg-7">
       <div class="pokemon-cards">
         <% @pokemons.each do |pokemon| %>
-        <% if pokemon.pokemon_class == "water" %>
+        <% if pokemon.kind.name == "water" %>
             <figure class="card card--water">
-          <% elsif pokemon.pokemon_class == "fire" %>
+          <% elsif pokemon.kind.name == "fire" %>
             <figure class="card card--fire">
-          <% elsif pokemon.pokemon_class == "electro" %>
+          <% elsif pokemon.kind.name == "electro" %>
             <figure class="card card--electric">
-          <% elsif pokemon.pokemon_class == "rock" %>
+          <% elsif pokemon.kind.name == "rock" %>
             <figure class="card card--normal">
-          <% elsif pokemon.pokemon_class == "poison" %>
+          <% elsif pokemon.kind.name == "poison" %>
             <figure class="card card--dark">
-          <% elsif pokemon.pokemon_class == "fairy" %>
+          <% elsif pokemon.kind.name == "fairy" %>
             <figure class="card card--fairy">
-          <% elsif pokemon.pokemon_class == "grass" %>
+          <% elsif pokemon.kind.name == "grass" %>
             <figure class="card card--grass">
-          <% elsif pokemon.pokemon_class == "ground" %>
+          <% elsif pokemon.kind.name == "ground" %>
             <figure class="card card--normal">
-          <% elsif pokemon.pokemon_class == "normal" %>
+          <% elsif pokemon.kind.name == "normal" %>
             <figure class="card card--ice">
-          <% else pokemon.pokemon_class == "bug" %>
+          <% else pokemon.kind.name == "bug" %>
             <figure class="card card--psychic">
         <% end %>
 
@@ -36,7 +36,7 @@
 
               <div>
                 <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
-                <div class="description"><%= pokemon.pokemon_class %></div>
+                <div class="description"><%= pokemon.kind.name %></div>
               </div>
 
               <div class="price"><%= pokemon.price_per_day %> €</div>
