@@ -18,13 +18,10 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    set_pokemon
+    @pokemon = Pokemon.find(params[:id])
+    @user = @pokemon.user
     @booking = Booking.new
-    if params[:query].present?
-      @pokemons = Pokemon.search_by_name_and_pokemon_class(params[:query])
-    else
-      @pokemons = Pokemon.all
-    end
+    @markers = { lat: @user.latitude, long: @user.longitude }
   end
 
   def new
