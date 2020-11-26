@@ -66,15 +66,16 @@
 // MY POKEMONS
 .add-poke-image {
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  margin: 0 auto;
   padding-left: 25px;
   img {
     width: 400px;
     max-height: none;
   }
+}
+
+.dash-content-container {
+  margin: 0 auto;
+  width: 60%;
 }
 
 .relative {
