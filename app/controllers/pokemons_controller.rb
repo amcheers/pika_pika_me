@@ -2,8 +2,11 @@ class PokemonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pokemons = Pokemon.all
-    @users = User.all
+    if params[:query].present?
+      @pokemons = Pokemon.search_by_name_and_pokemon_class(params[:query])
+    else
+      @pokemons = Pokemon.all
+    end
 
     @markers = @pokemons.map do |pokemon|
       {
