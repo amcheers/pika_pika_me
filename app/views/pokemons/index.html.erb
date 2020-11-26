@@ -3,9 +3,9 @@
 
   <div class="row">
     <div class="col-12 col-lg-6">
-        <h2 id="search-results">Pokemons in Amsterdam</h2>
+        <h2 class="title-show mt-5">Pokemon in Amsterdam</h2>
         <%= form_tag pokemons_path, method: :get, class: "search-bar" do %>
-            <div class="wrapper d-flex">
+            <div class="wrapper d-flex mt-3">
             <%= text_field_tag :query,
               params[:query],
               placeholder: "Find a pokemon"
@@ -37,18 +37,18 @@
             <% else pokemon.pokemon_class == "bug" %>
               <figure class="card card--psychic">
           <% end %>
-  
+
   <%# This indentation with the figure ending ending way later looks very funny? Ask tomorrow. %>
               <div class="pokemon-card-item">
                 <div class="pokemon-card-img">
                   <%= cl_image_tag pokemon.photo.key, crop: :fill %>
                 </div>
-  
+
                 <div>
                   <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
                   <div class="description"><%= pokemon.pokemon_class %></div>
                 </div>
-  
+
                 <div class="price"><%= pokemon.price_per_day %> €</div>
               </div>
             </figure>
