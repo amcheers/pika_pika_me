@@ -11,6 +11,7 @@ class Pokemon < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  validates :photo, presence: true
   validates :name, presence: true
   validates :description, presence: true
   validates :pokemon_class, presence: true
