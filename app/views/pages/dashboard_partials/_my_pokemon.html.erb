@@ -1,8 +1,6 @@
-<div class="col-12 col-lg-6">
-  <h3 class="dash-container-heading">My Pokemons</h3>
-  <div class="dash-container">
+<% if owned_pokemons.count >= 1 %>
     <div class="grid">
-     <% @owned_pokemons.each do |pokemon| %>
+     <% owned_pokemons.each do |pokemon| %>
       <% if pokemon.pokemon_class == "water" %>
         <figure class="card card--water">
       <% elsif pokemon.pokemon_class == "fire" %>
@@ -40,19 +38,18 @@
       <h3 class="card__type"><%= pokemon.pokemon_class %></h3>
     </figcaption>
   </figure>
-  <% end %>
-</div>
-<div><%= link_to "Add New Pokemon", new_pokemon_path, class: "btn btn-primary"%></div>
-</div>
-</div>
-
-
-<div class="col-12 col-lg-6">
-  <h3 class="dash-container-heading">My Pokemon Bookings</h3>
-  <div class="dash-container" id="discover-new" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://freepngimg.com/thumb/pokemon/37475-6-pikachu-transparent-image.png)">
-    <div id="discover-new-content">
-      <h1>You Can Find New Pokemons Anywhere</h1>
-      <div><%= link_to "Discover", root_path, class: "btn btn-primary"%></div>
+    <% end %>
+    <div><%= link_to "Add New Pokemon", new_pokemon_path, class: "btn btn-poke"%></div>
     </div>
-  </div>
+
+<% else %>
+
+<div class="">
+  <h1 class="mb-30 text-white">You haven't uploaded any Pokemons yet.</h1>
+  <div>
+      <%= link_to "Add New Pokemon", new_pokemon_path, class: "btn btn-poke"%>
+      <div class="add-poke-image">
+        <img src="https://freepngimg.com/thumb/pokemon/37475-6-pikachu-transparent-image.png" alt="">
+      </div>
 </div>
+<% end %>

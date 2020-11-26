@@ -30,6 +30,9 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 
+// import js for dashboard tabs
+import { activateBookingTab, activateDashTab } from "./dash-tabs";
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
