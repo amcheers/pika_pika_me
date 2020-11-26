@@ -7,19 +7,20 @@ class PokemonsController < ApplicationController
 
     @markers = @pokemons.map do |pokemon|
       pokemon.user.geocode.map do |user|
-      {
-        lat: pokemon.user.latitude,
-        lng: pokemon.user.longitude
-      }
+        {
+          lat: pokemon.user.latitude,
+          lng: pokemon.user.longitude
+        }
+      end
     end
-  end
-  @markers = @markers.map {|name| name[0]}
-  
+    @markers = @markers.map {|name| name[0]}
   end
 
   def show
-    set_pokemon
+    @pokemon = Pokemon.find(params[:id])
+    @user = @pokemon.user
     @booking = Booking.new
+    @markers = { lat: @user.latitude, long: @user.longitude }
   end
 
   def new
