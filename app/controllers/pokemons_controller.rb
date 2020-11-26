@@ -2,24 +2,29 @@ class PokemonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pokemons = Pokemon.all
-    @users = User.all
+    if params[:query].present?
+      @pokemons = Pokemon.search_by_name_and_pokemon_class(params[:query])
+    else
+      @pokemons = Pokemon.all
+    end
 
     @markers = @pokemons.map do |pokemon|
-      pokemon.user.geocode.map do |user|
       {
         lat: pokemon.user.latitude,
         lng: pokemon.user.longitude
       }
     end
-  end
-  @markers = @markers.map {|name| name[0]}
-  
+    @markers.reject! { |marker| marker[:lat].nil? || marker[:lng].nil? }
   end
 
   def show
     set_pokemon
     @booking = Booking.new
+    if params[:query].present?
+      @pokemons = Pokemon.search_by_name_and_pokemon_class(params[:query])
+    else
+      @pokemons = Pokemon.all
+    end
   end
 
   def new
