@@ -50,7 +50,7 @@ class PokemonsController < ApplicationController
   def update
     set_pokemon
     @pokemon.update(pokemon_params)
-    redirect_to pokemon_path(@pokemon)
+    redirect_to dashboard_path
   end
 
   private

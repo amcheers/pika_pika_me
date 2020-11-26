@@ -9,7 +9,9 @@
 require "open-uri"
 
 puts "cleaning database"
+User.destroy_all
 Pokemon.destroy_all
+Booking.destroy_all
 
 
 POKEMONS = [
@@ -62,5 +64,8 @@ POKEMONS.each do |pokemon_hash|
   pokemon.photo.attach(io: file, filename: "#{pokemon_hash[:name]}.png", content_type: 'image/png')
   pokemon.save!
 end
+
+puts "creating Bookings"
+Booking.create(start_date:"14.12.2020" ,end_date:"15.12.2020" , pokemon: Pokemon.all.sample, user: User.all.sample)
 
 puts "Done!"
