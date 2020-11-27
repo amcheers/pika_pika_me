@@ -31,10 +31,21 @@
 
 .button-home{
   border-radius: 5px;
-  background-color: #FBD74A;
-  color: white;
   border: none;
   padding: 10px;
+  color: black;
+  background-color: #FBD74A;
+    &:hover {font-weight: bolder;
+  }
+}
+
+.btn.btn-outline-dark{
+  color: black;
+  background-color: none;
+   &:hover {
+    background-color: #FBD74A;
+    font-weight: bolder;
+  }
 }
 
 
