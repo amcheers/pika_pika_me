@@ -1,6 +1,7 @@
 <div class="background-show">
   <div class="map-results-container ">
     <div class="col-12 col-lg-6">
+
       <div class="flex-container">
 
 
@@ -13,8 +14,8 @@
               <p class="poke-price"><%= @pokemon.price_per_day %> € per day</p>
               <p class="poke-address"><i class="fas fa-home show-icon-home"></i> <%= @pokemon.user.address %></p>
               <p class="poke-owner">By <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
+              <p><%= link_to "Read reviews", pokemon_pokemon_reviews_path(@pokemon) %></p>
             </div>
-
 
           <div class="form-wrapper" style="width: 200px; margin: 0 auto;">
             <%= simple_form_for [@pokemon, @booking] do |f| %>

@@ -58,7 +58,7 @@
                     </div>
 
                     <div><%= link_to "Discover New Pokemon", root_path, class: "btn btn-poke"%></div>
-
+                    <% if past.count >= 1 %>
                     <div class="dash-container">
                       <h3 class="dash-container-heading">My Past Bookings</h3>
                       <% past.each do |booking|%>
@@ -93,12 +93,21 @@
                                             <h3 class="card__type"><%= booking.pokemon.pokemon_class %></h3>
                                             <div class="card__stats">
                                               <p class="owner-info"><i>Owned By <%= booking.pokemon.user.first_name %></i></p>
+
                                               <p class="booking-info"><i class="far fa-calendar-alt"></i> <b><%= booking.start_date.to_formatted_s(:short) %></b> to <%= booking.end_date.to_formatted_s(:short)%></p>
+
+
+                                              <p><%= link_to "Write a review", new_booking_review_path(booking) %></p>
+
                                             </div>
                                           </figcaption>
                                         </figure>
                                         <% end %>
+
+
                                       </div>
+                                        <% end %>
+
 
                                       <% else %>
 

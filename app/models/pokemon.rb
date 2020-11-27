@@ -4,7 +4,7 @@ class Pokemon < ApplicationRecord
   belongs_to :user, dependent: :destroy
   has_one_attached :photo
   has_many :bookings
-
+  has_many :reviews, through: :bookings
   pg_search_scope :search_by_name_and_pokemon_class,
     against: [:name, :pokemon_class],
     using: {
