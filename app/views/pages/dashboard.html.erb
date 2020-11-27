@@ -1,3 +1,42 @@
+ <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <d class="logo-nav d-flex">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "pikame.png", class: "logo" %>
+        <% end %>
+    </d>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "btn btn-info"%>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Dashboard", dashboard_path, class: "btn btn-info" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://thetreeparty.nl/wp-content/uploads/2018/05/avatar-placeholder-300x300.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Wishlist", "#", class: "dropdown-item" %>
+              <%= link_to "My Profile", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "btn btn-info" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
 <div class="dash-bg">
   <div class="dash-nav">
     <h1 id="dashboard-heading">My Dashboard</h1>

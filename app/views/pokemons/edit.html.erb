@@ -2,9 +2,9 @@
 <%= simple_form_for @pokemon do |f| %>
 <figure class="card card--normal">
   <div class="card__image-container">
-    <%= f.input :photo, as: :file, label: false %>   
+    <%= f.input :photo, as: :file, label: false %>
   </div>
-  
+
   <figcaption class="card__caption">
     <h1 class="card__name">
       <%= f.input :name, label: false, :input_html => { :style=> "width: 100px; border-radius: 5px"}, :placeholder => "Edit" %>
@@ -18,7 +18,7 @@
       <tbody><tr>
         <%= f.input :description, label: false, :placeholder => "Edit", :input_html => { :style=> "width: 270px; border-radius: 5px"} %>
     </tbody></table>
-    
+
     <div class="card__abilities">
       <h4 class="card__ability">
         <span class="card__label"></span>

@@ -8,9 +8,10 @@
 
 // Sing-in card
 .background-log{
-  background-image: url('https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/13/a9a51bc0b8d626db493ab5f9a971b043/background-hero.png?imageOpt=1&fit=bounds&width=2163');
+  background-image: url('pokebalbanner2.png');
   background-position: center;
   height: 600px;
+  background-size: 100%;
 }
 
 
@@ -26,38 +27,31 @@
 }
 
 
-.pikachu {
-  position: absolute;
-  top: 0px;
-  right: 5px;
-  width: 100px;
-  height: 100px;
-}
 
 // Sing-up card
 
 .background-sign-up{
-  background-image: url('https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/13/a9a51bc0b8d626db493ab5f9a971b043/background-hero.png?imageOpt=1&fit=bounds&width=2163');
+  background-image: url('pokebalbanner2.png');
   background-position: center;
   height: 900px;
+  background-size: 110%;
 }
 
-.card-log-in{
+.card-sign-up{
   display: inline-block;
   width: 450px;
   padding: 30px;
   border-radius: 15px;
   margin: 85px;
-  background: #FFFAFA;
+  //background-image: url('');
+  background-color: #FFFAFA;
+  background-position: center;
   text-align: left;
   position: relative;
 }
 
-
-.pikachu {
-  position: absolute;
-  top: 0px;
-  right: 5px;
-  width: 88px;
-  height: 100px;
+.text-log-in{
+  opacity: 1;
 }
+
+

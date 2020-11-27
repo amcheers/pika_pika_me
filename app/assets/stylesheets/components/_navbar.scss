@@ -1,8 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  border-top: 10px solid #FBD74A;
-  background: #F4F4F4;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,3 +11,11 @@
   height: 90px;
 }
 
+.btn.btn-info{
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color:white;
+  border: none;
+  color: black;
+  font-size: bold;
+}
