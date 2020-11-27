@@ -1,27 +1,32 @@
 <div class="background-show">
   <div class="map-results-container ">
     <div class="col-12 col-lg-6">
-      <div class="container2">
-        <div class="pokemon-results">
-          <div class="pokemon-container">
-            <h2><%= @pokemon.name %></h2>
-            <%= cl_image_tag @pokemon.photo.key, class: "pokemon-photo" %>
-            <p><i><%= @pokemon.pokemon_class %></i></p>
-            <p><%= @pokemon.description%></p>
-            <p>Price: <%= @pokemon.price_per_day %>
-            <p>Address: <%= @pokemon.user.address %></p>
-            <p>Owner: <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
-          </div>
+      <div class="flex-container">
+
+
+            <div class="pokemon-container">
+              <div class="main-poke-container"></div>
+              <%= cl_image_tag @pokemon.photo.key, class: "pokemon-photo" %>
+              <h2 class="poke-name"><%= @pokemon.name %></h2>
+              <p class="poke-class"><i class="fas fa-bolt show-icon-class"></i> <i><%= @pokemon.pokemon_class %></i></p>
+              <p class="poke-description"><%= @pokemon.description%></p>
+              <p class="poke-price"><%= @pokemon.price_per_day %> € per day</p>
+              <p class="poke-address"><i class="fas fa-home show-icon-home"></i> <%= @pokemon.user.address %></p>
+              <p class="poke-owner">By <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
+            </div>
+
 
           <div class="form-wrapper" style="width: 200px; margin: 0 auto;">
             <%= simple_form_for [@pokemon, @booking] do |f| %>
               <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" } %>
               <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
-              <%= f.button :submit, "Book", class: "btn btn-danger" %>
+              <div class="buttons-booking">
+                <%= f.button :submit, "Book", class: "btn-poke-squared" %>
+                <%= link_to "Back", pokemons_path, class: "btn-poke-squared mt-3 back-btn" %>
+              </div>
             <% end %>
-            <%= link_to "Back", pokemons_path, class: "btn btn-danger mt-3" %>
           </div>
-        </div>
+
       </div>
     </div>
     <div class="col-12 col-lg-6 position: sticky;">

@@ -1,4 +1,11 @@
 // for views/pokemons/index.html.erb
+.poke-link {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: black;
+  }
+}
 
 #search-results {
   padding-top: 30px;

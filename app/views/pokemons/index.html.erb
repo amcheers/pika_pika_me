@@ -17,7 +17,7 @@
       <div class="container2">
         <div class="pokemon-cards cards-index">
           <% @pokemons.each do |pokemon| %>
-          <%= link_to pokemon_path(pokemon) do %>
+          <%= link_to pokemon_path(pokemon), class: "poke-link" do %>
           <% if pokemon.pokemon_class == "water" %>
           <figure class="card card--water index-card">
             <% elsif pokemon.pokemon_class == "fire" %>
@@ -43,8 +43,8 @@
                               <%# This indentation with the figure ending ending way later looks very funny? Ask tomorrow. %>
 
                               <div class="pokemon-card-item">
-                                <div class= "pokemon-card-img", style="background-image: url('<%= cl_image_path pokemon.photo.key %>')"></div>
-                                <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
+                                <div class= "pokemon-card-img" style="background-image: url('<%= cl_image_path pokemon.photo.key %>')"></div>
+                                <div class="name"><%= pokemon.name %></div>
                                 <div class="description"><i class="fas fa-bolt index-icon-class"></i> <%= pokemon.pokemon_class %></div>
                                 <div class="owner">By <%= pokemon.user.first_name %></div>
                                 <div class="address"><i class="fas fa-home index-icon-home"></i> <%= pokemon.user.address %></div>
