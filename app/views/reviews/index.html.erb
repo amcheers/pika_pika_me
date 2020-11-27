@@ -1,6 +1,6 @@
 <div class="sticky-footer">
   <h1> Reviews for <%= @pokemon.name %></h1>
-  
+
   <ul>
     <% @reviews.each do |review| %>
       <li><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></li>
