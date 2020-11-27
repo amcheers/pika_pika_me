@@ -4,7 +4,9 @@
 
 <div class="dash-container">
   <% if (upcoming.count >= 1) == false  %>
+  <div class="text-booking">
   <h1 class="mb-30 text-white">You don't have any upcoming Bookings.</h1>
+  </div>
   <div>
     <%= link_to "Discover new Pokemons", root_path, class: "btn btn-poke"%>
     <div class="add-poke-image">

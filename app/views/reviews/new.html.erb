@@ -1,6 +1,17 @@
-<h1>Write a review!</h1>
+<div class="background-log">
+  <div class="card-log-in">
+    <h2>Write a review!</h2>
 
-  <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :content %>
-    <%= f.submit "Submit your review" %>
-  <% end %>
+    <%= simple_form_for [@booking, @review] do |f| %>
+      <div class="form-inputs mt-3">
+        <%= f.input :content %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "Submit your review" %>
+      </div>
+    <% end %>
+
+    <%= image_tag "Pikachu.png", class: "pikachu" %>
+  </div>
+</div>
