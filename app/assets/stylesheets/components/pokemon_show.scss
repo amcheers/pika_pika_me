@@ -4,12 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 110%;
+  background-size: 112%;
 }
 
 .container2 {
-  padding: 80px;
-  margin: 20px;
+  padding: 20px;
+  margin: 50px;
   background-color: white;
   border-radius: 20px;
 }
@@ -25,3 +25,9 @@
   color: white;
 }
 
+
+// card on show page
+
+.pokemon-photo{
+  max-height: 180px;
+}
