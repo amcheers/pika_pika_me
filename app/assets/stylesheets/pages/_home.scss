@@ -1,8 +1,10 @@
 // Specific CSS for your home-page
 .background-color {
-  background-image: url('https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzd8fGNvbG9yZnVsJTIwYmFja2dyb3VuZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  background-image: url('pokebalbanner4.png');
   // background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
+  background-size: 110%;
+
 }
 
 .cards{
@@ -29,11 +31,91 @@
 
 .button-home{
   border-radius: 5px;
-  background-color: #FBD74A;
-  color: white;
-  border: none;
+  border: 1px solid black;
   padding: 10px;
+  color: black;
+  background-color: #FBD74A;
+    &:hover {font-weight: bolder;
+  }
 }
 
+.btn.btn-outline-dark{
+  color: black;
+  background-color: none;
+   &:hover {
+    background-color: #FBD74A;
+  }
+}
+
+.button-group{
+  margin-top: 35px;
+}
+
+.button-group a{
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  &:hover{
+    color: black;
+
+  }
+}
+
+
+
+.button-search-fire{
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  background: linear-gradient(0deg, rgba(199,24,0,1) 10%, rgba(252,194,69,1) 100%);
+  color: white;
+  text-decoration: none;
+  border: 3px solid red;
+  font-weight: bold;
+}
+
+.button-search-grass{
+  border-radius: 5px;
+  border: none;
+  padding: 12px;
+  background: linear-gradient(140deg, rgba(196,218,61,1) 0%, rgba(110,127,14,1) 69%, rgba(39,80,9,1) 100%);
+  color: white;
+  text-decoration: none;
+  border: 3px solid green;
+  font-weight: bold;
+}
+
+.button-search-electric{
+  border-radius: 5px;
+  border: none;
+  padding: 12px;
+  background: linear-gradient(90deg, rgba(255,222,0,1) 34%, rgba(232,255,153,1) 83%);
+  color: white;
+  text-decoration: none;
+  border: 3px solid yellow;
+  font-weight: bold;
+}
+
+.button-search-psychic{
+  border-radius: 5px;
+  border: none;
+  padding: 12px;
+  background: linear-gradient(140deg, rgba(255,167,249,1) 0%, rgba(255,44,195,1) 39%, rgba(255,227,167,1) 100%);
+  color: white;
+  text-decoration: none;
+  border: 3px solid pink;
+  font-weight: bold;
+}
+
+.button-search-water{
+  border-radius: 5px;
+  border: none;
+  padding: 12px;
+  background: linear-gradient(120deg, #1CB5E0 0%, #000851 100%);
+  color: white;
+  text-decoration: none;
+  border: 3px solid blue;
+  font-weight: bold;
+}
 
 

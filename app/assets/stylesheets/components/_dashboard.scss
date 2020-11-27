@@ -1,5 +1,5 @@
 .dash-bg {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzd8fGNvbG9yZnVsJTIwYmFja2dyb3VuZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('pokebalbanner3.png');
   background-size: cover;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .nav-link {
-  color: white;
+  color: #FBD74A;
   font-weight: bolder;
   &:hover {
     color: #FBD74A;
@@ -30,6 +30,7 @@
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: black;
     background-color: #FBD74A;
+    border-radius: 5px;
 }
 
 // DASH CONTAINER
@@ -67,6 +68,7 @@
 .add-poke-image {
   background-size: cover;
   padding-left: 25px;
+  margin-bottom: 30px;
   img {
     width: 400px;
     max-height: none;
@@ -103,4 +105,13 @@
   &:hover {
     opacity: 1;
   }
+}
+
+
+.dashboard-text{
+  margin-top: 30px;
+}
+
+.text-booking{
+  margin-top: 20px;
 }

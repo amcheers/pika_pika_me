@@ -1,10 +1,10 @@
 <div class="background-new">
 <%= simple_form_for @pokemon do |f| %>
-<figure class="card card--normal">
+<figure class="card card--water">
   <div class="card__image-container">
-    <%= f.input :photo, as: :file, label: false %>   
+    <%= f.input :photo, as: :file, label: false %>
   </div>
-  
+
   <figcaption class="card__caption">
     <h1 class="card__name">
       <%= f.input :name, label: false, :input_html => { :style=> "width: 80px; border-radius: 5px"}, :placeholder => "Add Name" %>
@@ -18,11 +18,11 @@
       <tbody><tr>
         <%= f.input :description, label: false, :placeholder => "Add Description", :input_html => { :style=> "width: 270px; border-radius: 5px"} %>
     </tbody></table>
-    
+
     <div class="card__abilities">
       <h4 class="card__ability">
         <span class="card__label"></span>
-        <%= f.submit '', class: 'btn-pokemon-new'%>
+        <%= f.submit 'Create', class: 'btn-pokemon-new'%>
       </h4>
       <h4 class="card__ability">
         <span class="card__label">
