@@ -1,10 +1,8 @@
 class ReviewsController < ApplicationController
   def index
-    @booking = Booking.find(params[:booking_id])
-    @pokemon = Pokemon.find(@booking.pokemon_id)
-    @reviews = @pokemon.bookings.map do |booking|
-      booking.review
-    end
+    # @booking = Booking.find(params[:booking_id])
+    @pokemon = Pokemon.find(params[:pokemon_id])
+    @reviews = @pokemon.reviews
   end
 
   def new
@@ -18,8 +16,9 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.booking = @booking
+    # @review.pokemon = @booking.pokemon 
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to pokemon_pokemon_reviews_path(@booking.pokemon)
     else
       render 'bookings/show'
     end

@@ -8,7 +8,9 @@ class PagesController < ApplicationController
     @owned_pokemons = current_user.pokemons
     @bookings = current_user.bookings
     @date = Date.today
-    
+
+
+
     @upcoming = []
     @past = []
     @bookings.each do |booking|
