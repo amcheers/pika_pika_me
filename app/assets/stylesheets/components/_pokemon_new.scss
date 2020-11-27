@@ -7,9 +7,14 @@
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  background-image: url(https://icon-library.com/images/2018/449481_pokeball-maker-s-mark-hd-png-download.png);
+  background-image: url(https://img.icons8.com/plasticine/2x/open-pokeball.png);
   background-position: center;
-  background-size: 100px;
-  color: rgb(0, 0, 0);
+  background-size: 135px;
+  color: rgb(226, 100, 100);
   font-weight: 900;
+  font-family: 'Nerko One', cursive;
+  &:hover {
+    border: 0.5px solid white;
+    color: white;
+  }
 }
