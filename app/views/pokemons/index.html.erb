@@ -1,40 +1,40 @@
  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <d class="logo-nav d-flex">
-      <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag "pikame.png", class: "logo" %>
-        <% end %>
-    </d>
+  <d class="logo-nav d-flex">
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "pikame.png", class: "logo" %>
+    <% end %>
+  </d>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: "btn btn-info"%>
-        </li>
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Dashboard", dashboard_path, class: "btn btn-info" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://thetreeparty.nl/wp-content/uploads/2018/05/avatar-placeholder-300x300.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Wishlist", "#", class: "dropdown-item" %>
-              <%= link_to "My Profile", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "btn btn-info" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Home", root_path, class: "btn btn-info"%>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to "Dashboard", dashboard_path, class: "btn btn-info" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://thetreeparty.nl/wp-content/uploads/2018/05/avatar-placeholder-300x300.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Wishlist", "#", class: "dropdown-item" %>
+          <%= link_to "My Profile", "#", class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-info" %>
+      </li>
+      <% end %>
+    </ul>
   </div>
+</div>
 
 
 <div class="background-show">
@@ -42,66 +42,68 @@
 
   <div class="row">
     <div class="col-12 col-lg-6">
-        <h2 class="title-show mt-5">Pokemon in Amsterdam</h2>
-        <%= form_tag pokemons_path, method: :get, class: "search-bar" do %>
-            <div class="wrapper d-flex mt-3">
-            <%= text_field_tag :query,
-              params[:query],
-              placeholder: "Find a pokemon"
-            %>
-            <%= submit_tag "Search", class: "button-home" %>
-            </div>
-        <% end %>
+      <h2 class="title-show mt-5">Pokemon in Amsterdam</h2>
+      <%= form_tag pokemons_path, method: :get, class: "search-bar" do %>
+      <div class="wrapper d-flex mt-3">
+        <%= text_field_tag :query,
+        params[:query],
+        placeholder: "Find a pokemon"
+        %>
+        <%= submit_tag "Search", class: "button-home" %>
+      </div>
+      <% end %>
+
       <div class="container2">
-        <div class="pokemon-cards">
+        <div class="pokemon-cards cards-index">
           <% @pokemons.each do |pokemon| %>
+          <%= link_to pokemon_path(pokemon) do %>
           <% if pokemon.pokemon_class == "water" %>
-              <figure class="card card--water">
+          <figure class="card card--water index-card">
             <% elsif pokemon.pokemon_class == "fire" %>
-              <figure class="card card--fire">
-            <% elsif pokemon.pokemon_class == "electro" %>
-              <figure class="card card--electric">
-            <% elsif pokemon.pokemon_class == "rock" %>
-              <figure class="card card--normal">
-            <% elsif pokemon.pokemon_class == "poison" %>
-              <figure class="card card--dark">
-            <% elsif pokemon.pokemon_class == "fairy" %>
-              <figure class="card card--fairy">
-            <% elsif pokemon.pokemon_class == "grass" %>
-              <figure class="card card--grass">
-            <% elsif pokemon.pokemon_class == "ground" %>
-              <figure class="card card--normal">
-            <% elsif pokemon.pokemon_class == "normal" %>
-              <figure class="card card--ice">
-            <% else pokemon.pokemon_class == "bug" %>
-              <figure class="card card--psychic">
-          <% end %>
+            <figure class="card card--fire index-card">
+              <% elsif pokemon.pokemon_class == "electro" %>
+              <figure class="card card--electric index-card">
+                <% elsif pokemon.pokemon_class == "rock" %>
+                <figure class="card card--normal index-card">
+                  <% elsif pokemon.pokemon_class == "poison" %>
+                  <figure class="card card--dark index-card">
+                    <% elsif pokemon.pokemon_class == "fairy" %>
+                    <figure class="card card--fairy index-card">
+                      <% elsif pokemon.pokemon_class == "grass" %>
+                      <figure class="card card--grass index-card">
+                        <% elsif pokemon.pokemon_class == "ground" %>
+                        <figure class="card card--normal index-card">
+                          <% elsif pokemon.pokemon_class == "normal" %>
+                          <figure class="card card--ice index-card">
+                            <% else pokemon.pokemon_class == "bug" %>
+                            <figure class="card card--psychic index-card">
+                              <% end %>
 
-  <%# This indentation with the figure ending ending way later looks very funny? Ask tomorrow. %>
-              <div class="pokemon-card-item">
-                <div class="pokemon-card-img">
-                  <%= cl_image_tag pokemon.photo.key, crop: :fill %>
+                              <%# This indentation with the figure ending ending way later looks very funny? Ask tomorrow. %>
+
+                              <div class="pokemon-card-item">
+                                <div class= "pokemon-card-img", style="background-image: url('<%= cl_image_path pokemon.photo.key %>')"></div>
+                                <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
+                                <div class="description"><i class="fas fa-bolt index-icon-class"></i> <%= pokemon.pokemon_class %></div>
+                                <div class="owner">By <%= pokemon.user.first_name %></div>
+                                <div class="address"><i class="fas fa-home index-icon-home"></i> <%= pokemon.user.address %></div>
+                                <div class="price"><%= pokemon.price_per_day %>€ / day</div>
+                              </div>
+
+
+                            </figure>
+                            <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-lg-6">
+                        <div id="map"
+                        style="width: 50vw; height: 100vh; position: sticky; top: 0;"
+                        data-markers="<%= @markers.to_json %>"
+                        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <div>
-                  <div class="name"><%= link_to pokemon.name, pokemon_path(pokemon) %></div>
-                  <div class="description"><%= pokemon.pokemon_class %></div>
-                </div>
-
-                <div class="price"><%= pokemon.price_per_day %> €</div>
-              </div>
-            </figure>
-          <% end %>
-        </div>
-      </div>
-      </div>
-
-    <div class="col-12 col-lg-6">
-      <div id="map"
-     style="width: 50vw; height: 100vh; position: sticky; top: 0;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
-  </div>
-</div>
-</div>
