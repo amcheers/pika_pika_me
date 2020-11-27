@@ -66,6 +66,14 @@ POKEMONS.each do |pokemon_hash|
 end
 
 puts "creating Bookings"
-Booking.create(start_date:"14.12.2020" ,end_date:"15.12.2020" , pokemon: Pokemon.all.sample, user: User.all.sample)
-
+Booking.create(start_date:"14.01.2021" ,end_date:"15.01.2021" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"16.02.2021" ,end_date:"22.02.2021" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"15.12.2020" ,end_date:"23.12.2020" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"29.11.2020" ,end_date:"01.12.2020" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"11.12.2020" ,end_date:"15.12.2020" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"10.01.2021" ,end_date:"02.02.2021" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"04.12.2020" ,end_date:"17.12.2020" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"14.12.2020" ,end_date:"18.12.2020" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"07.01.2021" ,end_date:"09.01.2021" , pokemon: Pokemon.all.sample, user: User.all.sample)
+Booking.create(start_date:"20.01.2021" ,end_date:"21.01.2021" , pokemon: Pokemon.all.sample, user: User.all.sample)
 puts "Done!"

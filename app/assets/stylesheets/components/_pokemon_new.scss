@@ -12,4 +12,8 @@
   background-size: 100px;
   color: rgb(0, 0, 0);
   font-weight: 900;
+  &:hover {
+    border: 0.5px solid white;
+    color: white;
+  }
 }
