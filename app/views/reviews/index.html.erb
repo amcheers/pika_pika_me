@@ -1,11 +1,13 @@
-<h1> Reviews <%= @pokemon.name %></h1>
+<div class="footer-sticky">
+  <h1> Reviews <%= @pokemon.name %></h1>
 
 
-<ul>
-  <% @reviews.each do |review| %>
+  <ul>
+    <% @reviews.each do |review| %>
 
-  <li><%= review.content %></li>
-  <li><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></li>
-  
-  <% end %>
-</ul>
+    <li><%= review.content %></li>
+    <li><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></li>
+
+    <% end %>
+  </ul>
+</div>
