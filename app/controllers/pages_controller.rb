@@ -9,6 +9,8 @@ class PagesController < ApplicationController
     @bookings = current_user.bookings
     @date = Date.today
 
+
+
     @upcoming = []
     @past = []
     @bookings.each do |booking|
@@ -16,7 +18,9 @@ class PagesController < ApplicationController
         @upcoming << booking
       else
         @past << booking
+        @review = Review.new
       end
     end
+
   end
 end

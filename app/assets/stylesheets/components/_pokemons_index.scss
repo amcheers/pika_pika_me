@@ -1,4 +1,11 @@
 // for views/pokemons/index.html.erb
+.poke-link {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: black;
+  }
+}
 
 #search-results {
   padding-top: 30px;
@@ -14,23 +21,80 @@
   height: 500px;
 }
 
+.index-card {
+  width: 470px;
+}
+
+.cards-index {
+  margin-left: 45px;
+}
+
 .pokemon-card-item {
-  display: flex;
-  justify-content: center;
   position: relative;
-  margin-top: 10px;
+  padding: 20px;
+  height: 200px;
+  width: 300px;
 
   .pokemon-card-img {
-    padding: 10px;
+    position: absolute;
+    background-size: cover;
+    height: 180px;
+    width: 180px;
+    left: -24px;
+    top: -1px;
   }
 
   .name {
     font-weight: bolder;
+    position: absolute;
+    top: -2px;
+    left: 153px;
+    font-size: 25px;
+  }
+
+  .owner {
+    position: absolute;
+    left: 323px;
+    top: 6px;
+    font-size: 15px;
+    width: 100px;
+  }
+
+  .address {
+    position: absolute;
+    font-size: 15px;
+    top: 84px;
+    left: 152px;
+    width: 400px;
+    font-weight: lighter;
+    .index-icon-home {
+      color: #5EA634;
+      font-size: 20px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
+  }
+
+  .description {
+    position: absolute;
+    font-size: 15px;
+    top: 118px;
+    left: 159px;
+    .index-icon-class {
+      color: #FBD74A;
+      font-size: 20px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
   }
 
   .price {
     position: absolute;
-    right: 16px;
+    right: -101px;
+    top: 166px;
+    font-weight: bolder;
   }
 }
+
+
 
