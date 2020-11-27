@@ -14,10 +14,11 @@
               <p class="poke-price"><%= @pokemon.price_per_day %> € per day</p>
               <p class="poke-address"><i class="fas fa-home show-icon-home"></i> <%= @pokemon.user.address %></p>
               <p class="poke-owner">By <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
-              <p><%= link_to "Read reviews", pokemon_pokemon_reviews_path(@pokemon) %></p>
+              <p class="poke-reviews"><%= link_to "Read reviews", pokemon_pokemon_reviews_path(@pokemon) %></p>
             </div>
 
           <div class="form-wrapper" style="width: 200px; margin: 0 auto;">
+            <h4 class="pb-10">Book <%= @pokemon.name %> </h2>
             <%= simple_form_for [@pokemon, @booking] do |f| %>
               <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" } %>
               <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>

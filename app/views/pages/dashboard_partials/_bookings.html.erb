@@ -1,6 +1,7 @@
 
 
 <% if bookings.count >= 1 %>
+
 <div class="dash-container">
   <% if (upcoming.count >= 1) == false  %>
   <h1 class="mb-30 text-white">You don't have any upcoming Bookings.</h1>
@@ -13,6 +14,7 @@
   <% else %>
   <h3 class="dash-container-heading">My Upcoming Bookings</h3>
   <% upcoming.each do |booking|%>
+  <%= link_to pokemon_path(booking.pokemon) do %>
   <% if booking.pokemon.pokemon_class == "water" %>
   <figure class="card card--water">
     <% elsif booking.pokemon.pokemon_class == "fire" %>
@@ -37,7 +39,7 @@
 
                       <div><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} do %>
                         <div class="trash-icon"><i class="fas fa-trash"></i></div>
-                        <% end %>
+                        <% end %></div>
 
                         <div class="card__image-container">
                           <%= cl_image_tag booking.pokemon.photo.key, crop: :fill, class:"card__image" %>
@@ -55,9 +57,10 @@
                       </figure>
                       <% end %>
                       <% end %>
+                      <% end %>
+                    <div><%= link_to "Discover New Pokemon", root_path, class: "btn btn-poke"%></div>
                     </div>
 
-                    <div><%= link_to "Discover New Pokemon", root_path, class: "btn btn-poke"%></div>
                     <% if past.count >= 1 %>
                     <div class="dash-container">
                       <h3 class="dash-container-heading">My Past Bookings</h3>
@@ -119,3 +122,4 @@
                                         </div>
                                       </div>
                                       <% end %>
+                                    </div>
