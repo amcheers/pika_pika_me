@@ -1,0 +1,10 @@
+<h1> Reviews</h1>
+
+
+<ul>
+  <%= @pokemon.bookings.map do |booking| %>
+
+  <li><%= booking.review %></li>
+  
+  <% end %>
+</ul>

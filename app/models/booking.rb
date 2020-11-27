@@ -2,6 +2,7 @@ class Booking < ApplicationRecord
   before_create :calculate_total_price
   belongs_to :pokemon
   belongs_to :user
+  has_one :review
   validate :correct_times
   validates :start_date, presence: true
   validates :end_date, presence: true

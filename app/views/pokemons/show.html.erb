@@ -10,6 +10,7 @@
             <p>Price: <%= @pokemon.price_per_day %>
             <p>Address: <%= @pokemon.user.address %></p>
             <p>Owner: <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
+            <p><%= link_to "Read reviews", pokemon_pokemon_reviews_path(@pokemon) %></p>
           </div>
           <div class="pokemon-photo">
             <%= cl_image_tag @pokemon.photo.key %>

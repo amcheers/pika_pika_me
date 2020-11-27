@@ -22,6 +22,11 @@ class PokemonsController < ApplicationController
     @user = @pokemon.user
     @booking = Booking.new
     @markers = { lat: @user.latitude, long: @user.longitude }
+    @reviews = []
+    @pokemon.bookings.each do |booking|
+      @reviews << booking.review
+    end 
+
   end
 
   def new
