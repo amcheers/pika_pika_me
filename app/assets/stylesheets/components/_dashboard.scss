@@ -30,6 +30,7 @@
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: black;
     background-color: #FBD74A;
+    border-radius: 5px;
 }
 
 // DASH CONTAINER
@@ -67,6 +68,7 @@
 .add-poke-image {
   background-size: cover;
   padding-left: 25px;
+  margin-bottom: 30px;
   img {
     width: 400px;
     max-height: none;
@@ -103,4 +105,13 @@
   &:hover {
     opacity: 1;
   }
+}
+
+
+.dashboard-text{
+  margin-top: 30px;
+}
+
+.text-booking{
+  margin-top: 20px;
 }

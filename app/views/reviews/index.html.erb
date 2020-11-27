@@ -1,13 +1,25 @@
+<<<<<<< HEAD
 <div class="footer-sticky">
   <h1> Reviews <%= @pokemon.name %></h1>
+=======
+<h1> Reviews for <%= @pokemon.name %></h1>
+>>>>>>> acc8d67bae994b0e8ae588d92284ee337f136fda
 
 
   <ul>
     <% @reviews.each do |review| %>
 
+<<<<<<< HEAD
     <li><%= review.content %></li>
     <li><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></li>
 
     <% end %>
   </ul>
 </div>
+=======
+  <li><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></li>
+  <li><%= review.content %></li>
+  
+  <% end %>
+</ul>
+>>>>>>> acc8d67bae994b0e8ae588d92284ee337f136fda
