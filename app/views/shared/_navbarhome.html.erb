@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div id ="navbar" class="navbar transparant sticky navbar-expand-sm navbar-light navbar-lewagon">
   <d class="logo-nav d-flex">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "pikame.png", class: "logo" %>
@@ -35,3 +35,19 @@
     </ul>
   </div>
 </div>
+
+  <script>// When the user scrolls the page, execute myFunction
+  window.onscroll = function() {myFunction()};
+
+  // Get the navbar
+  var navbar = document.getElementById("navbar");
+
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    if (window.pageYOffset > 0) {
+      navbar.classList.remove("transparant")
+    } else {
+      navbar.classList.add("transparant");
+    }
+  }
+  </script>
