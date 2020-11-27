@@ -11,6 +11,7 @@
             <p>Price: <%= @pokemon.price_per_day %>
             <p>Address: <%= @pokemon.user.address %></p>
             <p>Owner: <%= @pokemon.user.first_name %> <%= @pokemon.user.last_name %></p>
+            <p><%= link_to "Read reviews", pokemon_pokemon_reviews_path(@pokemon) %></p>
           </div>
 
           <div class="form-wrapper" style="width: 200px; margin: 0 auto;">
