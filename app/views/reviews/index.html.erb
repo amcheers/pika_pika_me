@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="footer-sticky">
   <h1> Reviews <%= @pokemon.name %></h1>
 =======
@@ -23,3 +24,15 @@
   <% end %>
 </ul>
 >>>>>>> acc8d67bae994b0e8ae588d92284ee337f136fda
+=======
+<div class="sticky-footer">
+  <h1> Reviews for <%= @pokemon.name %></h1>
+  
+  <ul>
+    <% @reviews.each do |review| %>
+      <li><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></li>
+      <li><%= review.content %></li>
+    <% end %>
+  </ul>
+</div>
+>>>>>>> 0c48695eafe24d06a4ee581bcacf936f04c63a9f
